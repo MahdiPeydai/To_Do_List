@@ -1,0 +1,5 @@
+setuptools~=67.6.1
+python-dotenv~=1.0.0
+PyJWT~=2.6.0
+Flask~=2.2.3
+WTForms~=3.0.1

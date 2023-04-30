@@ -1,0 +1,17 @@
+[
+  {
+    "user_id": 0,
+    "category_id": 0,
+    "category_title": "title"
+  },
+  {
+    "user_id": 1,
+    "category_id": 1,
+    "category_title": "programming"
+  },
+  {
+    "user_id": 2,
+    "category_title": "kjn",
+    "category_id": 3
+  }
+]

@@ -1,0 +1,29 @@
+{% extends "auth/layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+{% block style_sheet %}
+<link href="{{ url_for('static', filename='auth/css/login_page.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+    <div class="d-flex align-items-center justify-content-center">
+        <h1>
+            Login
+        </h1>
+    </div>
+    {% from "_formhelpers.html" import render_field %}
+        <form method=post>
+            <dl>
+            {{ render_field(form.email) }}
+            {{ render_field(form.password) }}
+            </dl>
+            <div class="d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-success container-xl m-2">
+                    <p class="h6 m-1">Login</p>
+                </button>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-secondary container-xl mx-2">
+                    <p class="h6 m-1">Sing Up</p>
+                </a>
+            </div>
+        </form>
+{% endblock %}

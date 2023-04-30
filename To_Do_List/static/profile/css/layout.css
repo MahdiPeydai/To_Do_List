@@ -1,0 +1,14 @@
+html, body{
+    height: 100%;
+}
+body{
+    background-color: #e5dacc;
+}
+.log_out{
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+}
+.box{
+    background-color: rgba(234, 234, 234, 0.92);
+}

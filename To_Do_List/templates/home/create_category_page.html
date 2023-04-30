@@ -1,0 +1,44 @@
+{% extends "home/layout.html" %}
+{% block title %}
+Add Category
+{% endblock %}
+{% block style_sheet %}
+<link href="{{ url_for('static', filename='home/css/create_category_page.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="box p-5 rounded-3">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+            <div class="d-flex align-items-center justify-content-center mt-2">
+                <h5 class="text-danger">
+                    {{message}}
+                </h5>
+            </div>
+            <hr>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="d-flex align-items-center justify-content-center">
+            <h1>
+                Create Category
+            </h1>
+        </div>
+        {% from "_formhelpers.html" import render_field %}
+        <form method=post>
+            <dl>
+            {{ render_field(form.category_name) }}
+            </dl>
+            <div class="d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-success container-xl m-2">
+                    <p class="h6 m-1">Create</p>
+                </button>
+                <a href="{{ url_for('home.home_page') }}" class="btn btn-secondary container-xl m-2">
+                    <p class="h6 m-1">Home</p>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
