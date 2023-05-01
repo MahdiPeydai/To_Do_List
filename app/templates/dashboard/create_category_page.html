@@ -1,0 +1,62 @@
+{% extends "layout/layout.html" %}
+{% block title %}
+Add Category
+{% endblock %}
+{% block style_sheet %}
+<link href="{{ url_for('static', filename='dashboard/css/create_category_page.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="account">
+    <a href="{{ url_for('profile.information') }}" class="m-4">
+        <button class="account_btn py-2 px-3 rounded-2 border-0">
+            Hi <b>
+                {{user_name}}
+            </b>
+            <i class="fas fa-bars fa-2"></i>
+        </button>
+    </a>
+</div>
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="box p-5 rounded-3">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+            <div class="d-flex align-items-center justify-content-center mt-2">
+                <h5 class="text-danger">
+                    {{message}}
+                </h5>
+            </div>
+            <hr>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="d-flex align-items-center justify-content-center">
+            <h1>
+                Create Category
+            </h1>
+        </div>
+        {% from "formhelpers/formhelpers.html" import render_field %}
+        <form method=post>
+            <dl>
+            {{ render_field(form.category_name) }}
+            </dl>
+            <div class="d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-success container-xl m-2">
+                    <p class="h6 m-1">Create</p>
+                </button>
+                <a href="{{ url_for('dashboard.dashboard_page') }}" class="btn btn-secondary container-xl m-2">
+                    <p class="h6 m-1">Home</p>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="log_out">
+    <a href="{{ url_for('auth.logout') }}" class="m-4">
+        <button class="account_btn py-2 px-3 rounded-2 border-0">
+            Logout
+            <i class="fas fa-sign-out-alt fa-2"></i>
+        </button>
+    </a>
+</div>
+{% endblock %}

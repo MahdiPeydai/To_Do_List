@@ -1,0 +1,45 @@
+{% extends "layout/layout.html" %}
+{% block title %}
+Login
+{% endblock %}
+{% block style_sheet %}
+<link href="{{ url_for('static', filename='auth/css/login_page.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="box px-5 py-3 rounded-3">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="d-flex align-items-center justify-content-center mt-2">
+                <h3 class="text-danger">
+                    {{message}}
+                </h3>
+            </div>
+            <hr>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+        <div class="d-flex align-items-center justify-content-center">
+            <h1>
+                Login
+            </h1>
+        </div>
+        {% from "formhelpers/formhelpers.html" import render_field %}
+        <form method=post>
+            <dl>
+                {{ render_field(form.email) }}
+                {{ render_field(form.password) }}
+            </dl>
+            <div class="d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-success container-xl m-2">
+                    <p class="h6 m-1">Login</p>
+                </button>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-secondary container-xl mx-2">
+                    <p class="h6 m-1">Sing Up</p>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

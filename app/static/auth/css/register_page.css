@@ -1,0 +1,7 @@
+.error_email::placeholder{
+    color: red;
+    opacity: 1;
+}
+.box{
+    background-color: rgba(234, 234, 234, 0.92);
+}

@@ -1,0 +1,48 @@
+{% extends "layout/layout.html" %}
+{% block title %}
+Index
+{% endblock %}
+{% block style_sheet %}
+<link href="{{ url_for('static', filename='blog/css/index_page.css') }}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="board p-5 align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center">
+            <p class="h2">
+                Welcome to
+            </p>
+            <p class="h1">
+                To Do List
+            </p>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-5">
+            <ul>
+                <li>
+                    <h4>
+                        Daily to do list planner
+                    </h4>
+                </li>
+                <li>
+                    <h4>
+                        Activity organizer
+                    </h4>
+                </li>
+                <li>
+                    <h4>
+                        Activity check list
+                    </h4>
+                </li>
+            </ul>
+        </div>
+        <form class="d-flex align-items-center justify-content-center mt-5">
+            <a href="{{url_for('auth.login')}}" class="btn btn-success container-xl m-2">
+                <p class="h5 m-1">Login</p>
+            </a>
+            <a href="{{url_for('auth.register')}}" class="btn btn-secondary container-xl m-2">
+                <p class="h5 m-1">Sing Up</p>
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

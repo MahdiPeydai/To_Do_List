@@ -1,0 +1,16 @@
+.box{
+    background-color: rgba(234, 234, 234, 0.92);
+}
+.account{
+    position: fixed;
+    top: 30px;
+    left: 10px;
+}
+.account_btn{
+    background-color: rgba(189, 189, 189, 0.89);
+}
+.log_out{
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+}
